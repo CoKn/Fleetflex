@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { toast } from "sonner";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Line, ComposedChart } from "recharts";
 import { CheckCircle, Battery, Zap, TrendingUp, AlertCircle, X } from "lucide-react";
@@ -34,6 +34,8 @@ export default function DayAheadPlan() {
   const [isApproved, setIsApproved] = useState(false);
   const [selectedAction, setSelectedAction] = useState<number | null>(null);
   const [vehiclePlanModal, setVehiclePlanModal] = useState<number | null>(null);
+
+  const chartData = useMemo(() => timelineData, []);
 
   const handleApprove = () => {
     setIsApproved(true);
@@ -87,16 +89,16 @@ export default function DayAheadPlan() {
         {/* 24-Hour Timeline Chart */}
         <div className="bg-white rounded-lg p-6 border border-gray-200 mb-6">
           <h3 className="text-lg font-semibold text-slate-900 mb-4">24-Hour Energy Plan</h3>
-          <ResponsiveContainer width="100%" height={300} key="price-demand-chart">
-            <ComposedChart data={timelineData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <ResponsiveContainer width="100%" height={300}>
+            <ComposedChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="hour" tick={{ fontSize: 12 }} interval="preserveStartEnd" />
+              <XAxis dataKey="hour" tick={{ fontSize: 12 }} />
               <YAxis yAxisId="left" label={{ value: 'Price (€/kWh)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} />
               <YAxis yAxisId="right" orientation="right" label={{ value: 'Demand (MW)', angle: 90, position: 'insideRight', style: { fontSize: 12 } }} />
               <Tooltip />
               <Legend wrapperStyle={{ paddingTop: 10 }} />
-              <Bar yAxisId="left" dataKey="price" fill="#3b82f6" name="Electricity Price" isAnimationActive={false} key="price-bar" />
-              <Line yAxisId="right" type="monotone" dataKey="demand" stroke="#64748b" strokeWidth={2} name="Airport Demand" dot={false} isAnimationActive={false} key="demand-line" />
+              <Bar yAxisId="left" dataKey="price" fill="#3b82f6" name="Electricity Price" isAnimationActive={false} />
+              <Line yAxisId="right" type="monotone" dataKey="demand" stroke="#64748b" strokeWidth={2} name="Airport Demand" dot={false} isAnimationActive={false} />
             </ComposedChart>
           </ResponsiveContainer>
         </div>

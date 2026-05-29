@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
 import { ArrowRight, AlertCircle, Zap } from "lucide-react";
 
@@ -12,6 +13,8 @@ const liveData = [
 ];
 
 export default function AirportBuffer() {
+  const chartData = useMemo(() => liveData, []);
+
   return (
     <div className="p-8">
       <div className="max-w-7xl mx-auto">
@@ -95,20 +98,20 @@ export default function AirportBuffer() {
         {/* Live Chart */}
         <div className="bg-white rounded-lg p-6 border border-gray-200">
           <h3 className="text-lg font-semibold text-slate-900 mb-4">Grid Demand Reduction (Last 90 minutes)</h3>
-          <ResponsiveContainer width="100%" height={300} key="buffer-chart">
-            <AreaChart data={liveData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+          <ResponsiveContainer width="100%" height={300}>
+            <AreaChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <defs>
                 <linearGradient id="colorBefore" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#64748b" stopOpacity={0.3} key="stop-before-1" />
-                  <stop offset="95%" stopColor="#64748b" stopOpacity={0} key="stop-before-2" />
+                  <stop offset="5%" stopColor="#64748b" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#64748b" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="colorAfter" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} key="stop-after-1" />
-                  <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} key="stop-after-2" />
+                  <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="colorEV" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#22c55e" stopOpacity={0.3} key="stop-ev-1" />
-                  <stop offset="95%" stopColor="#22c55e" stopOpacity={0} key="stop-ev-2" />
+                  <stop offset="5%" stopColor="#22c55e" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="#22c55e" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -116,9 +119,9 @@ export default function AirportBuffer() {
               <YAxis label={{ value: 'Power (MW)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} />
               <Tooltip />
               <Legend wrapperStyle={{ paddingTop: 10 }} />
-              <Area type="monotone" dataKey="gridBefore" stroke="#64748b" fillOpacity={1} fill="url(#colorBefore)" name="Before FleetFlex" isAnimationActive={false} key="area-before" />
-              <Area type="monotone" dataKey="gridAfter" stroke="#3b82f6" fillOpacity={1} fill="url(#colorAfter)" name="After FleetFlex" isAnimationActive={false} key="area-after" />
-              <Area type="monotone" dataKey="evContribution" stroke="#22c55e" fillOpacity={1} fill="url(#colorEV)" name="EV Contribution" isAnimationActive={false} key="area-ev" />
+              <Area type="monotone" dataKey="gridBefore" stroke="#64748b" fillOpacity={1} fill="url(#colorBefore)" name="Before FleetFlex" isAnimationActive={false} />
+              <Area type="monotone" dataKey="gridAfter" stroke="#3b82f6" fillOpacity={1} fill="url(#colorAfter)" name="After FleetFlex" isAnimationActive={false} />
+              <Area type="monotone" dataKey="evContribution" stroke="#22c55e" fillOpacity={1} fill="url(#colorEV)" name="EV Contribution" isAnimationActive={false} />
             </AreaChart>
           </ResponsiveContainer>
         </div>
