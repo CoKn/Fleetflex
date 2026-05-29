@@ -1,0 +1,295 @@
+Here is a ready-to-paste **Figma Make prompt**:
+
+---
+
+## Figma Make Prompt
+
+Create a polished clickable web app prototype for a B2B energy platform called **FleetFlex**.
+
+**Concept:**
+FleetFlex helps airports use their parked electric vehicle fleet as an energy buffer. The platform first protects vehicle readiness, then uses stored EV energy to reduce airport electricity costs, and only sells remaining surplus energy through a market partner such as Mainova. The product is V2B-first and marketplace-second: airport energy optimization first, external energy trading second.
+
+The prototype should feel like a professional SaaS dashboard for airport energy managers and fleet operators.
+
+---
+
+### Product narrative
+
+FleetFlex solves this problem:
+
+* Airports are electrifying their fleets, but many EV batteries sit idle between operational tasks.
+* Electricity prices fluctuate during the day.
+* The airport wants to charge vehicles when electricity is cheap, use stored battery energy when airport electricity is expensive, and sell only surplus capacity externally.
+* The platform must always protect vehicle readiness and battery health.
+
+The challenge context is a B2B V2G marketplace where fleet operators offer battery capacity and energy buyers purchase flexibility. 
+The industry context supports V2B as a practical first implementation for fleet operators with on-site charging infrastructure. 
+
+---
+
+# Prototype structure
+
+Create a clickable prototype with **6 main screens**.
+
+---
+
+## Screen 1: Landing / Executive Overview
+
+Title:
+**FleetFlex — Turn parked airport EVs into an energy asset**
+
+Subtitle:
+**Charge cheap. Power the airport. Sell the surplus.**
+
+Show three value cards:
+
+1. **Protect operations**
+   Vehicles are always kept above required state of charge.
+
+2. **Reduce airport electricity costs**
+   EV batteries power airport demand during expensive periods.
+
+3. **Monetize surplus energy**
+   Remaining capacity is packaged and sold through Mainova / BKV partner.
+
+Add a primary CTA button:
+**Open Energy Dashboard**
+
+Use a clean enterprise SaaS style: white background, subtle green/blue energy accents, rounded cards, airport/energy iconography.
+
+---
+
+## Screen 2: Fleet Availability Dashboard
+
+Page title:
+**Fleet Readiness & Battery Availability**
+
+Show top KPI cards:
+
+* **EVs connected:** 78 / 92
+* **Operationally protected:** 31 vehicles
+* **Available for airport energy:** 38 vehicles
+* **Surplus candidates:** 9 vehicles
+* **Total usable battery:** 1,240 kWh
+* **Available discharge power:** 860 kW
+
+Add a visual vehicle status table:
+
+Columns:
+
+* Vehicle ID
+* Type
+* Current SOC
+* Required SOC
+* Next task
+* Charger status
+* Eligible action
+
+Example rows:
+
+* GSE-042 | Ground support | 82% | 55% | 04:30 | Bidirectional | Available
+* BUS-011 | Airport bus | 67% | 70% | 02:10 | Charging | Protected
+* VAN-084 | Service van | 91% | 60% | 06:00 | Bidirectional | Surplus candidate
+
+Add filters:
+
+* All vehicles
+* Available
+* Protected
+* Surplus
+* Charging
+* Discharging
+
+Purpose of screen: show that FleetFlex does not blindly trade energy. It first checks whether vehicles can safely participate.
+
+---
+
+## Screen 3: Day-Ahead Optimization Plan
+
+Page title:
+**Tomorrow’s Energy Plan**
+
+Show a 24-hour timeline with three layers:
+
+1. **Electricity price forecast**
+2. **Airport demand forecast**
+3. **Fleet battery action plan**
+
+Use sample time blocks:
+
+* 12:00–15:00: **Charge fleet — low/negative prices**
+* 17:00–20:00: **Discharge to airport — peak electricity costs**
+* 20:00–22:00: **Sell surplus — airport demand covered**
+
+Add cards:
+
+* **Expected charging cost saving:** €1,850
+* **Expected airport demand reduction:** 1.6 MWh
+* **Expected surplus sale:** 420 kWh
+* **Estimated battery wear cost:** €190
+* **Net expected benefit:** €2,430
+
+Include a button:
+**Approve Tomorrow’s Plan**
+
+Purpose of screen: show that the platform uses day-ahead pricing for planning, not chaotic real-time trading.
+
+---
+
+## Screen 4: Airport Energy Buffer / V2B Mode
+
+Page title:
+**Airport Energy Buffer Active**
+
+Show a real-time energy flow diagram:
+
+**EV Fleet Batteries → Airport Buildings / Depots / Charging Infrastructure**
+
+Display current status:
+
+* Current airport demand: 4.8 MW
+* EV battery contribution: 720 kW
+* Grid purchase reduction: 15%
+* Vehicles discharging: 34
+* Vehicles protected: 44
+
+Include a mini alert:
+
+**Operational rule active:**
+No vehicle may fall below required SOC for its next airport task.
+
+Show a small live chart:
+
+* Grid demand before FleetFlex
+* Grid demand after FleetFlex
+* EV discharge contribution
+
+Purpose of screen: make the airport-first logic clear. The platform uses EV energy internally before selling externally.
+
+---
+
+## Screen 5: Surplus Energy Marketplace
+
+Page title:
+**Surplus Energy Offer**
+
+Show a card saying:
+
+**Airport needs satisfied. Surplus capacity available.**
+
+Surplus offer details:
+
+* Available energy: 420 kWh
+* Available power: 310 kW
+* Delivery window: 20:00–22:00
+* Minimum vehicle SOC protected: Yes
+* Battery wear priced in: Yes
+* Suggested buyer: Mainova / BKV partner
+
+Add buyer-side offer card:
+
+**Mainova Energy Desk**
+Status: Interested
+Bid price: €0.21 / kWh
+Estimated gross revenue: €88
+Battery wear cost: €26
+Platform fee: €9
+Net payout to Fraport: €53
+
+Buttons:
+
+* **Accept offer**
+* **Reject**
+* **Hold for airport reserve**
+
+Purpose of screen: show the marketplace layer. Only verified surplus energy is sold externally.
+
+---
+
+## Screen 6: Savings, Revenue & Settlement Dashboard
+
+Page title:
+**Daily Settlement Report**
+
+Show summary cards:
+
+* **Airport electricity savings:** €1,950
+* **Surplus trading revenue:** €530
+* **Battery degradation cost:** €210
+* **Platform fee:** €160
+* **Net benefit to Fraport:** €2,110
+* **CO₂ impact estimate:** 1.8 tons avoided
+
+Add transaction ledger table:
+
+Columns:
+
+* Time
+* Action
+* Energy volume
+* Vehicle pool
+* Financial impact
+* Battery cost
+* Net value
+
+Example rows:
+
+* 12:00–15:00 | Cheap charging | 2.4 MWh | 64 EVs | +€720 | €0 | +€720
+* 17:00–20:00 | Airport discharge | 1.6 MWh | 38 EVs | +€1,230 | -€140 | +€1,090
+* 20:00–22:00 | Surplus sold to Mainova | 420 kWh | 9 EVs | +€88 | -€26 | +€53
+
+Add final confirmation banner:
+
+**FleetFlex protected all airport operations today. No vehicle readiness violations occurred.**
+
+Purpose of screen: show business value and trust.
+
+---
+
+# Navigation
+
+Create a left sidebar with these menu items:
+
+* Overview
+* Fleet Readiness
+* Day-Ahead Plan
+* Airport Energy Buffer
+* Surplus Marketplace
+* Settlement
+* Settings
+
+Make the prototype clickable so users can move between all screens.
+
+---
+
+# Design style
+
+Use a professional, modern B2B SaaS look.
+
+Visual direction:
+
+* Clean white background
+* Dark navy text
+* Green and electric blue accents
+* Rounded cards
+* Subtle shadows
+* Clear KPI cards
+* Charts and timeline blocks
+* Airport + energy + EV iconography
+* Avoid consumer-app styling; make it feel enterprise-ready
+
+Tone: trustworthy, operational, financial, precise.
+
+---
+
+# Key message to communicate throughout the prototype
+
+FleetFlex does not simply sell airport vehicle energy to the grid.
+
+It follows this priority logic:
+
+1. **Protect vehicle readiness**
+2. **Reduce airport electricity costs**
+3. **Sell only verified surplus energy**
+
+Add this priority logic as a small persistent banner or visual stepper across the dashboard.
