@@ -95,6 +95,21 @@ export default function AirportBuffer() {
           </div>
         </div>
 
+        {/* Airport Demand Chart */}
+        <div className="bg-white rounded-lg p-6 border border-gray-200">
+          <h3 className="text-lg font-semibold text-slate-900 mb-4">Airport Demand (Last 90 minutes)</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+              <XAxis dataKey="time" tick={{ fontSize: 12 }} />
+              <YAxis label={{ value: 'Power (MW)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} domain={[4, 6]} />
+              <Tooltip />
+              <Legend wrapperStyle={{ paddingTop: 10 }} />
+              <Line type="monotone" dataKey="gridAfter" stroke="#3b82f6" strokeWidth={3} name="Airport Demand" dot={{ fill: '#3b82f6', r: 4 }} isAnimationActive={false} />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
       </div>
     </div>
   );

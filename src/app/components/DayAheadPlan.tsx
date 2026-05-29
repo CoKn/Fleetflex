@@ -97,14 +97,14 @@ export default function DayAheadPlan() {
                   <stop offset="95%" stopColor="#22c55e" stopOpacity={0.1} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="hour" tick={{ fontSize: 12 }} />
-              <YAxis yAxisId="left" label={{ value: 'Price (€/kWh)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} />
-              <YAxis yAxisId="right" orientation="right" label={{ value: 'Demand (MW)', angle: 90, position: 'insideRight', style: { fontSize: 12 } }} />
-              <Tooltip />
-              <Legend wrapperStyle={{ paddingTop: 10 }} />
-              <Bar yAxisId="left" dataKey="price" fill="#3b82f6" name="Electricity Price" isAnimationActive={false} opacity={0.6} />
-              <Line yAxisId="right" type="monotone" dataKey="demand" stroke="#22c55e" strokeWidth={3} name="Airport Demand (MW)" dot={false} isAnimationActive={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" key="grid" />
+              <XAxis dataKey="hour" tick={{ fontSize: 12 }} key="xaxis" />
+              <YAxis yAxisId="left" label={{ value: 'Price (€/kWh)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} key="yaxis-left" />
+              <YAxis yAxisId="right" orientation="right" label={{ value: 'Demand (MW)', angle: 90, position: 'insideRight', style: { fontSize: 12 } }} key="yaxis-right" />
+              <Tooltip key="tooltip" />
+              <Legend wrapperStyle={{ paddingTop: 10 }} key="legend" />
+              <Bar yAxisId="left" dataKey="price" fill="#3b82f6" name="Electricity Price" isAnimationActive={false} opacity={0.6} key="bar-price" />
+              <Line yAxisId="right" type="monotone" dataKey="demand" stroke="#22c55e" strokeWidth={3} name="Airport Demand (MW)" dot={false} isAnimationActive={false} key="line-demand" />
             </ComposedChart>
           </ResponsiveContainer>
         </div>
