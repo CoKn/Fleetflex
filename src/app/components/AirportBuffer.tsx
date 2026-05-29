@@ -95,36 +95,6 @@ export default function AirportBuffer() {
           </div>
         </div>
 
-        {/* Live Chart */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200">
-          <h3 className="text-lg font-semibold text-slate-900 mb-4">Grid Demand Reduction (Last 90 minutes)</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <AreaChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <defs>
-                <linearGradient id="colorBefore" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#64748b" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#64748b" stopOpacity={0} />
-                </linearGradient>
-                <linearGradient id="colorAfter" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
-                </linearGradient>
-                <linearGradient id="colorEV" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#22c55e" stopOpacity={0.3} />
-                  <stop offset="95%" stopColor="#22c55e" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="time" tick={{ fontSize: 12 }} />
-              <YAxis label={{ value: 'Power (MW)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} />
-              <Tooltip />
-              <Legend wrapperStyle={{ paddingTop: 10 }} />
-              <Area type="monotone" dataKey="gridBefore" stroke="#64748b" fillOpacity={1} fill="url(#colorBefore)" name="Before FleetFlex" isAnimationActive={false} />
-              <Area type="monotone" dataKey="gridAfter" stroke="#3b82f6" fillOpacity={1} fill="url(#colorAfter)" name="After FleetFlex" isAnimationActive={false} />
-              <Area type="monotone" dataKey="evContribution" stroke="#22c55e" fillOpacity={1} fill="url(#colorEV)" name="EV Contribution" isAnimationActive={false} />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
       </div>
     </div>
   );

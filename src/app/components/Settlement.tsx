@@ -110,15 +110,15 @@ export default function Settlement() {
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <div className="text-sm text-slate-600 mb-1">Battery wear</div>
-            <div className="text-2xl font-bold text-red-600 font-mono">€210</div>
+            <div className="text-2xl font-bold text-red-600 font-mono">-€210</div>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <div className="text-sm text-slate-600 mb-1">Platform fee</div>
-            <div className="text-2xl font-bold text-slate-900 font-mono">€160</div>
+            <div className="text-2xl font-bold text-slate-900 font-mono">-€160</div>
           </div>
           <div className="bg-white rounded-lg p-4 border-2 border-primary bg-green-50">
-            <div className="text-sm text-slate-700 mb-1 font-medium">Net benefit</div>
-            <div className="text-2xl font-bold text-primary font-mono">€2,110</div>
+            <div className="text-sm text-slate-700 mb-1 font-medium">Energy sold to grid</div>
+            <div className="text-2xl font-bold text-primary font-mono">3.2 MWh</div>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200">
             <div className="text-sm text-slate-600 mb-1">CO₂ avoided</div>
@@ -132,36 +132,6 @@ export default function Settlement() {
           <div>
             <h4 className="font-semibold text-slate-900 mb-1">100% operational compliance maintained</h4>
             <p className="text-sm text-slate-700">FleetFlex protected all airport operations today. No vehicle readiness violations occurred.</p>
-          </div>
-        </div>
-
-        {/* Performance Metrics */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg p-6 border border-gray-200">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-slate-900">Energy Optimized</h3>
-              <TrendingUp className="w-5 h-5 text-primary" />
-            </div>
-            <div className="text-3xl font-bold text-slate-900 font-mono mb-1">6.7 MWh</div>
-            <div className="text-sm text-slate-600">Total energy managed today</div>
-          </div>
-
-          <div className="bg-white rounded-lg p-6 border border-gray-200">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-slate-900">Vehicles Utilized</h3>
-              <TrendingUp className="w-5 h-5 text-accent" />
-            </div>
-            <div className="text-3xl font-bold text-slate-900 font-mono mb-1">78 EVs</div>
-            <div className="text-sm text-slate-600">Average participation rate: 85%</div>
-          </div>
-
-          <div className="bg-white rounded-lg p-6 border border-gray-200">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-slate-900">Grid Impact</h3>
-              <TrendingUp className="w-5 h-5 text-primary" />
-            </div>
-            <div className="text-3xl font-bold text-slate-900 font-mono mb-1">-18%</div>
-            <div className="text-sm text-slate-600">Average peak demand reduction</div>
           </div>
         </div>
 
